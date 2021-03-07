@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket = "hi1280-tfstate-main"
+    key    = "terraform-auto-apply-example.tfstate"
+    region = "ap-northeast-1"
+  }
+}
+
 provider "aws" {
   region  = "ap-northeast-1"
 }
