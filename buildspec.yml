@@ -1,0 +1,8 @@
+version: 0.2
+env:
+  parameter-store:
+    GITHUB_TOKEN: /github_token
+phases:
+  build:
+    commands:
+      - ${CODEBUILD_SRC_DIR}/scripts/build.sh
