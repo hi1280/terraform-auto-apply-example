@@ -28,8 +28,36 @@ resource "aws_codebuild_webhook" "terraform_auto_apply_example" {
 
   filter_group {
     filter {
+      pattern                 = "PULL_REQUEST_CREATED"
+      type                    = "EVENT"
+    }
+  }
+
+  filter_group {
+    filter {
+      pattern                 = "PULL_REQUEST_UPDATED"
+      type                    = "EVENT"
+    }
+  }
+
+  filter_group {
+    filter {
+      pattern                 = "PULL_REQUEST_REOPENED"
+      type                    = "EVENT"
+    }
+  }
+
+  filter_group {
+    filter {
+      pattern                 = "PULL_REQUEST_REOPENED"
+      type                    = "EVENT"
+    }
+  }
+
+  filter_group {
+    filter {
       exclude_matched_pattern = false
-      pattern                 = "PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED, PULL_REQUEST_REOPENED, PULL_REQUEST_MERGED, PUSH"
+      pattern                 = "PUSH"
       type                    = "EVENT"
     }
     filter {
