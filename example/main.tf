@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "hi1280-tfstate-main"
-    key    = "terraform-auto-apply.tfstate"
+    key    = "terraform-auto-apply-example.tfstate"
     region = "ap-northeast-1"
   }
 }
@@ -10,4 +10,6 @@ provider "aws" {
   region = "ap-northeast-1"
 }
 
-data "aws_caller_identity" "current" {}
+resource "aws_vpc" "main" {
+  cidr_block = "10.0.0.0/16"
+}
