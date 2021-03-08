@@ -49,13 +49,6 @@ resource "aws_codebuild_webhook" "terraform_auto_apply_example" {
 
   filter_group {
     filter {
-      pattern                 = "PULL_REQUEST_REOPENED"
-      type                    = "EVENT"
-    }
-  }
-
-  filter_group {
-    filter {
       exclude_matched_pattern = false
       pattern                 = "PUSH"
       type                    = "EVENT"
